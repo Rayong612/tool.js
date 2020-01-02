@@ -1,0 +1,35 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>www.jb51.net JS下拉联动</title>
+    <script>
+        function setSecond(obj) {
+            var val = obj.value;
+            if (val == 'en') {
+                var sec = document.getElementById('second');
+                sec.innerHTML = "<option>one</option><option>two</option>";
+            } else {
+                var sec = document.getElementById('second');
+                sec.innerHTML = "<option>一</option><option>二</option>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <select id="first" onchange="setSecond(this)">
+            <option value="en">en</option>
+            <option value="zh">zh</option>
+        </select>
+    </div>
+    <div>
+        <select id="second">
+        </select>
+    </div>
+</body>
+
+</html>
