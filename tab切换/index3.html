@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tab" id="tab">
+        <span class="active">工作日</span>
+        <span>休息日</span>
+    </div>
+    <div class="tabdiv">
+        <div class="tabpane">
+            11111111111
+        </div>
+        <div class="tabpane">
+            22222222
+        </div>
+    </div>
+    <script>
+        var span = document.querySelectorAll('#tab span'), //css选择器
+            div = document.querySelectorAll('.tabpane');
+
+        for (var i = 0; i < span.length; i++) { //循环span标签
+            span[i].idx = i;
+            //给span一个自定义的idx属性，将I赋值进去，因为下边的循环不能直接拿到这个循环的i
+            span[i].onclick = function () {
+                for (var j = 0; j < div.length; j++) { //循环div标签
+                    div[j].style.display = 'none'; //每次点击都先隐藏掉div，并移除class
+                    span[j].classList.remove('active');
+                }
+                div[this.idx].style.display = 'block'; //给当前div显示出来
+                this.classList.add('active'); //增加class
+            }
+        }
+    </script>
+</body>
+
+</html>
